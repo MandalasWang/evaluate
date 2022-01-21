@@ -1,0 +1,14 @@
+                             ██                     ██
+                            ░██                    ░██
+  █████  ██    ██  ██████   ░██ ██   ██  ██████   ██████  █████
+ ██░░░██░██   ░██ ░░░░░░██  ░██░██  ░██ ░░░░░░██ ░░░██░  ██░░░██
+░███████░░██ ░██   ███████  ░██░██  ░██  ███████   ░██  ░███████
+░██░░░░  ░░████   ██░░░░██  ░██░██  ░██ ██░░░░██   ░██  ░██░░░░
+░░██████  ░░██   ░░████████ ███░░██████░░████████  ░░██ ░░██████
+ ░░░░░░    ░░     ░░░░░░░░ ░░░  ░░░░░░  ░░░░░░░░    ░░   ░░░░░░
+
+
+${AnsiColor.BRIGHT_GREEN}
+Project.Version:V1.0
+Application Version:${application.version}${application.formatted-version}
+Spring Boot Version:${application.version}${spring-boot.formatted-version}

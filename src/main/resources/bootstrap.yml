@@ -1,0 +1,58 @@
+server:
+  port: 9001
+app.id: ${spring.application.name}
+apollo:
+  meta: http://apollo-config-server-dev.wenwo.cn
+  bootstrap:
+    namespaces: application, MID-DEP.logback, INTERFACE.logback,BASIC-DEP.domain
+    enabled: true
+    eagerLoad:
+      enabled: true
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: com.wenwo.domain.evaluate
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  swagger:
+    base-package: com.wenwo.evaluate.controller
+    title: com.wenwo.evaluate.controller
+    description: 环评邮件服务
+    version: 1.0.0
+    contact:
+      name: 叶文龙
+      email: wenlong.ye@pingcl.com
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    hostname: ${spring.cloud.client.ip-address}
+---
+spring:
+  profiles: dev
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-dev.wenwo.cn/eureka
+    registry-fetch-interval-seconds: 10
+
+---
+spring:
+  profiles: test
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 20
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-test.wenwo.cn/eureka
+    registry-fetch-interval-seconds: 10
+
